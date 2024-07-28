@@ -1,0 +1,46 @@
+@use '../_utilities/variables' as *;
+@use '../_utilities/mixins' as *;
+
+
+.containerHeader{
+    background-color: $headerColor;
+    @include dFlexRowItemsCenter;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 1rem;
+    .img-icon{
+        width: 3rem;
+    }
+    .abrir-menu{
+        display: none;
+        color: $white;
+    }
+    .containerNav{
+        .cerrar-menu{
+            display: none;
+            color: white;
+        }
+        .nav-list{
+            display: flex;
+            gap: 1rem;
+            list-style-type: none;
+            li a {
+                text-decoration: none;
+                font-family: $fontPixel;
+                color: white;
+                font-size: 1.2rem;
+                transition: color .5s ease;
+                &:hover{
+                    color: $navItemsColor;
+                }
+                &.nav-active{
+                    color: $navItemsColor;
+                }
+            }
+        }
+    }
+}

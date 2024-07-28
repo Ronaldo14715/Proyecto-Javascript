@@ -1,0 +1,66 @@
+@use 'variables.scss' as *;
+
+@mixin responsive($breakpoint){
+
+    @if($breakpoint == xs){
+
+        @media (min-width: $minXsMobile) and (max-width: $maxXsMobile){
+            @content;
+        }
+
+    }
+
+    @else if $breakpoint == sm {
+        
+        @media (min-width: $minSmMobile) and (max-width: $maxSmMobile){
+            @content;
+        }
+
+    }@else if $breakpoint == md{
+
+        @media (min-width: $minDesktopMedium) and (max-width: $maxDesktopMedium){
+            @content;
+        }
+
+    }@else if $breakpoint == lg{
+
+        @media (min-width: $minDesktopLarge) and (max-width: $maxDesktopLarge){
+            @content;
+        }
+
+    }@else if ($breakpoint == xl){
+
+        @media (min-width: $minDesktopXLarge) and (max-width: $maxDesktopXLarge){
+            @content;
+        }
+
+    }
+
+}
+
+@mixin dFlexColumnItemsCenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin dFlexColumnItemsEnd{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+@mixin dFlexRowItemsCenter{
+    display: flex;
+    align-items: center;
+}
+
+@mixin dFlexRowJustifyStart{
+    display: flex;
+    justify-content: start;
+}
+
+@mixin dFlexRowJustifyCenter{
+    display: flex;
+    justify-content: center;
+}
