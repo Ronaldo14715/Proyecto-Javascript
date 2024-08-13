@@ -1,0 +1,49 @@
+@use '../_utilities/variables.scss' as *;
+@use '../_utilities/mixins.scss' as *;
+
+.container-productos{
+    margin: 1rem;
+    .container-productos-cards{
+        margin: 1rem;
+        .card-producto{
+            @include dFlexColumnItemsCenter;
+            outline: 1px solid $outLineVentas;
+            width: 80%;
+            .card-producto-header{
+                @include dFlexRowJustifyCenter;
+            }
+            .card-producto-body{
+                @include dFlexColumnItemsCenter;
+                padding: 1rem 0 1rem 0;
+                gap: 1rem;
+                font-family: $fontPixel;
+                .card-body-span-descripcion{
+                    text-align: center;
+                    font-weight: bold;
+                    
+                }
+                .card-body-span-precio{
+                    text-align: center;
+                    font-weight: bold;
+                    
+                }
+            }
+            .card-producto-footer{
+                @include dFlexRowJustifyCenter;
+                padding: 1rem 0 1rem 0;
+                background-color: $divButtonColor;
+                width: 100%;
+                .card-footer-button{
+                    padding: 0.5rem;
+                    background-color: $white;
+                    transition: background-color 0.8s ease-in-out;
+                    border: 1px solid $white;
+                    &:hover{
+                        background-color: $divButtonColor;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

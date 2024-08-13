@@ -175,6 +175,32 @@
             @include dFlexColumnItemsEnd;
         }
     }
+    .container-productos{
+        .container-productos-cards{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 2rem;
+            place-items: center center;
+            .card-producto{
+                .card-producto-header{
+                    padding: 1rem 0 1rem 0;
+                    .card-header-img{
+                        width: 70%;
+                    }
+                }
+                .card-producto-body{
+                    width: 320px;
+                    .card-body-span-descripcion{
+                        font-size: 1rem;
+                    }
+                    .card-body-span-precio{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include responsive(xl){
@@ -189,6 +215,33 @@
         }
         .footerName{
             @include dFlexColumnItemsEnd;
+        }
+    }
+
+    .container-productos{
+        .container-productos-cards{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
+            place-items: center center;
+            .card-producto{
+                .card-producto-header{
+                    padding: 1rem 0 1rem 0;
+                    .card-header-img{
+                        width: 70%;
+                    }
+                }
+                .card-producto-body{
+                    width: 320px;
+                    .card-body-span-descripcion{
+                        font-size: 1rem;
+                    }
+                    .card-body-span-precio{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
         }
     }
 }

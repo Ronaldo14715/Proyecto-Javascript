@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //NAV
     const abrirNav = document.querySelector('#abrir');
     const cerrarNav = document.querySelector('#cerrar');
     const nav = document.querySelector('#containerNav');
@@ -14,4 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('Error');
     }
+    //NAV
 });
