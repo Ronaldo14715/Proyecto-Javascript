@@ -112,15 +112,15 @@ function eliminarProductoDelCarrito(idProducto){
     const producto = carrito[idProducto];
     if(producto){
         if (total - producto.precio < 0) {
-            total = 0; // Asegurarnos de que el total no sea negativo
+            total = 0;
         } else {
-            total -= producto.precio; // Restar el precio de una unidad del producto
+            total -= producto.precio;
         }
 
         if (producto.cantidad > 1) {
-            producto.cantidad -= 1; // Disminuir la cantidad en uno
+            producto.cantidad -= 1;
         } else {
-            delete carrito[idProducto]; // Eliminar el producto del carrito si la cantidad es 1
+            delete carrito[idProducto];
         }
 
         console.log(`Producto eliminado: ${producto.descripcion}`);
