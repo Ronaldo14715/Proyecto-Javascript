@@ -84,25 +84,53 @@ function mostrarProductos(productos){
 
 let carrito = {};
 let total = 0;
-function agregarProductoAlCarrito(idProducto){
-    
 
+function agregarProductoAlCarrito(idProducto){
     const producto = geekStore.productos[idProducto];
-    if (producto) {
-        // Verifica si el producto ya está en el carrito
-        if (!carrito[idProducto]) {
-            carrito[idProducto] = { ...producto, cantidad: 1 };
-        } else {
+    if(producto){
+        if(!carrito[idProducto]){
+            carrito[idProducto] = {descripcion: producto.descripcion, precio: producto.precio, cantidad: 1};
+        }else{
             carrito[idProducto].cantidad += 1;
         }
         total += producto.precio;
-        alert(`Producto agregado al carrito: ${producto.descripcion}. Total en carrito: S/.${total}`);
-    } else {
-        alert("Producto no encontrado. Por favor, intente de nuevo.");
+
+        let mensajeCarrito = "Productos agregado al carrito:\n";
+
+        for(let id in carrito){
+            let item = carrito[id];
+            mensajeCarrito += `-${item.descripcion} (Cantidad: ${item.cantidad}, Precio: S/. ${item.precio})\n`;
+        }
+        mensajeCarrito+= `\nPrecio total: S./${total}`;
+        alert(mensajeCarrito);
+    }else{
+        console.log("error, producto no encontrado.");
     }
 }
 
+function eliminarProductoDelCarrito(idProducto){
+    const producto = carrito[idProducto];
+    if(producto){
+        if (total - producto.precio < 0) {
+            total = 0; // Asegurarnos de que el total no sea negativo
+        } else {
+            total -= producto.precio; // Restar el precio de una unidad del producto
+        }
+
+        if (producto.cantidad > 1) {
+            producto.cantidad -= 1; // Disminuir la cantidad en uno
+        } else {
+            delete carrito[idProducto]; // Eliminar el producto del carrito si la cantidad es 1
+        }
+
+        console.log(`Producto eliminado: ${producto.descripcion}`);
+        console.log(`Nuevo total en carrito: S/.${total}`);
+    }else{
+        console.log("El producto no se encuentra en el carrito");
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     mostrarProductos(geekStore.productos);
-
 });
