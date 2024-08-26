@@ -188,6 +188,28 @@
     background-color: transparent;
     cursor: pointer;
   }
+  .container-productos .container-productos-cards {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+    place-items: center center;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-header {
+    padding: 1rem 0 1rem 0;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-header .card-header-img {
+    width: 100%;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-body {
+    width: 320px;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-body .card-body-span-descripcion {
+    font-size: 1rem;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-body .card-body-span-precio {
+    font-size: 1.4rem;
+  }
   .containerFooter {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -259,6 +281,28 @@
     background-color: transparent;
     cursor: pointer;
   }
+  .container-productos .container-productos-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+    place-items: center center;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-header {
+    padding: 1rem 0 1rem 0;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-header .card-header-img {
+    width: 100%;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-body {
+    width: 320px;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-body .card-body-span-descripcion {
+    font-size: 1rem;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-body .card-body-span-precio {
+    font-size: 1.4rem;
+  }
   .containerFooter {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -293,6 +337,28 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+  }
+  .container-productos .container-productos-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+    place-items: center center;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-header {
+    padding: 1rem 0 1rem 0;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-header .card-header-img {
+    width: 100%;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-body {
+    width: 320px;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-body .card-body-span-descripcion {
+    font-size: 1rem;
+  }
+  .container-productos .container-productos-cards .card-producto .card-producto-body .card-body-span-precio {
+    font-size: 1.4rem;
   }
 }
 @media (min-width: 992px) and (max-width: 1320px) {

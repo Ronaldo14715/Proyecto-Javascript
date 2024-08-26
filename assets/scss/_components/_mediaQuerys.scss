@@ -57,6 +57,33 @@
         
     }
 
+    .container-productos{
+        .container-productos-cards{
+            display: grid;
+            grid-template-columns: repeat(  1fr);
+            grid-template-rows: auto;
+            gap: 2rem;
+            place-items: center center;
+            .card-producto{
+                .card-producto-header{
+                    padding: 1rem 0 1rem 0;
+                    .card-header-img{
+                        width: 100%;
+                    }
+                }
+                .card-producto-body{
+                    width: 320px;
+                    .card-body-span-descripcion{
+                        font-size: 1rem;
+                    }
+                    .card-body-span-precio{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+
     .containerFooter{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -129,6 +156,33 @@
         
     }
 
+    .container-productos{
+        .container-productos-cards{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+            gap: 2rem;
+            place-items: center center;
+            .card-producto{
+                .card-producto-header{
+                    padding: 1rem 0 1rem 0;
+                    .card-header-img{
+                        width: 100%;
+                    }
+                }
+                .card-producto-body{
+                    width: 320px;
+                    .card-body-span-descripcion{
+                        font-size: 1rem;
+                    }
+                    .card-body-span-precio{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+
     .containerFooter{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -157,6 +211,32 @@
         }
         .footerName{
             @include dFlexColumnItemsEnd;
+        }
+    }
+    .container-productos{
+        .container-productos-cards{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+            gap: 2rem;
+            place-items: center center;
+            .card-producto{
+                .card-producto-header{
+                    padding: 1rem 0 1rem 0;
+                    .card-header-img{
+                        width: 100%;
+                    }
+                }
+                .card-producto-body{
+                    width: 320px;
+                    .card-body-span-descripcion{
+                        font-size: 1rem;
+                    }
+                    .card-body-span-precio{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
         }
     }
 }

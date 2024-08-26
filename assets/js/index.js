@@ -17,8 +17,8 @@ class Tienda{
 }
 
 const geekStore = new Tienda();
-const producto1 = new Producto(1,"../assets/img/figuraNarutoShippudenSasuke.webp","Funko Pop - Naruto", 150);
-const producto2 = new Producto(2,"../assets/img/figuraOnePieceGoldRoger.jpg","Funko Pop - Sasuke", 150);
+const producto1 = new Producto(1,"../assets/img/figuraNarutoShippudenSasuke.webp","Funko Pop - Sasuke", 150);
+const producto2 = new Producto(2,"../assets/img/figuraOnePieceGoldRoger.jpg","Funko Pop - Gol D Roger", 150);
 const producto3 = new Producto(3,"../assets/img/figuraOnePieceLuffy.jpg","Funko Pop - Luffy", 170);
 
 geekStore.agregarProducto(producto1);
@@ -82,6 +82,17 @@ function mostrarProductos(productos){
     }
 }
 
+function cargarCarrito() {
+    const carritoGuardado = localStorage.getItem('carrito');
+    if(carritoGuardado) {
+        carrito = JSON.parse(carritoGuardado);
+    }
+}
+
+function guardarCarrito(){
+    localStorage.setItem('carrito',JSON.stringify(carrito));
+}
+
 let carrito = {};
 let total = 0;
 
@@ -89,7 +100,7 @@ function agregarProductoAlCarrito(idProducto){
     const producto = geekStore.productos[idProducto];
     if(producto){
         if(!carrito[idProducto]){
-            carrito[idProducto] = {descripcion: producto.descripcion, precio: producto.precio, cantidad: 1};
+            carrito[idProducto] = {descripcion: producto.descripcion, precio: producto.precio,imagen: producto.imagen, cantidad: 1};
         }else{
             carrito[idProducto].cantidad += 1;
         }
@@ -101,36 +112,15 @@ function agregarProductoAlCarrito(idProducto){
             let item = carrito[id];
             mensajeCarrito += `-${item.descripcion} (Cantidad: ${item.cantidad}, Precio: S/. ${item.precio})\n`;
         }
-        mensajeCarrito+= `\nPrecio total: S./${total}`;
         alert(mensajeCarrito);
+        guardarCarrito();
     }else{
         console.log("error, producto no encontrado.");
     }
 }
 
-function eliminarProductoDelCarrito(idProducto){
-    const producto = carrito[idProducto];
-    if(producto){
-        if (total - producto.precio < 0) {
-            total = 0;
-        } else {
-            total -= producto.precio;
-        }
-
-        if (producto.cantidad > 1) {
-            producto.cantidad -= 1;
-        } else {
-            delete carrito[idProducto];
-        }
-
-        console.log(`Producto eliminado: ${producto.descripcion}`);
-        console.log(`Nuevo total en carrito: S/.${total}`);
-    }else{
-        console.log("El producto no se encuentra en el carrito");
-    }
-}
-
-
 document.addEventListener('DOMContentLoaded', () => {
+    
     mostrarProductos(geekStore.productos);
+    cargarCarrito();
 });
