@@ -106,12 +106,9 @@ function agregarProductoAlCarrito(idProducto){
         }
         total += producto.precio;
 
-        let mensajeCarrito = "Productos agregado al carrito:\n";
+        let mensajeCarrito = `Productos agregado al carrito:\n${producto.descripcion}`;
 
-        for(let id in carrito){
-            let item = carrito[id];
-            mensajeCarrito += `-${item.descripcion} (Cantidad: ${item.cantidad}, Precio: S/. ${item.precio})\n`;
-        }
+        
         alert(mensajeCarrito);
         guardarCarrito();
     }else{

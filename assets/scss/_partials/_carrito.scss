@@ -1,0 +1,70 @@
+@use '../_utilities/variables.scss' as *;
+@use '../_utilities/mixins.scss' as *;
+
+.main-container-carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    .container-carrito{
+            border: 1px solid black;
+        .container-carrito-productos{
+            .carrito-contador{
+                padding: 1rem;
+                span{
+                    font-weight: bold;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                }
+            }
+            .carrito-productos{
+                .producto{
+                    display: flex;
+                    gap: 1rem;
+                    padding: 1rem;
+                    border: 1px solid black;
+                    .carrito-productos-img{
+                        img{
+                            width: 8rem;
+                        }
+                    }
+                    .carrito-productos-descripcion{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                        .carrito-envio{
+                            color: green;
+                        }
+                    }
+                }
+
+            }
+        }
+        .container-carrito-pagar{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            span{
+                font-weight: bold;
+                font-size: 1.2rem;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            .carrito-pagar-total{
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .carrito-pagar-button{
+                button{
+                    padding: 1rem;
+                    width: 100%;
+                    border-radius: 50px;
+                    background-color: orange;
+                    color: white;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+}

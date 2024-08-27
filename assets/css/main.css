@@ -112,6 +112,65 @@
   color: #fff;
 }
 
+.main-container-carrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.main-container-carrito .container-carrito {
+  border: 1px solid black;
+}
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-contador {
+  padding: 1rem;
+}
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-contador span {
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+}
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto .carrito-productos-img img {
+  width: 8rem;
+}
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto .carrito-productos-descripcion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto .carrito-productos-descripcion .carrito-envio {
+  color: green;
+}
+.main-container-carrito .container-carrito .container-carrito-pagar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.main-container-carrito .container-carrito .container-carrito-pagar span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-total {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-button button {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 50px;
+  background-color: orange;
+  color: white;
+  font-weight: bolder;
+}
+
 .containerFooter {
   margin-top: 2rem;
   padding: 1rem;
@@ -429,7 +488,7 @@
     padding: 1rem 0 1rem 0;
   }
   .container-productos .container-productos-cards .card-producto .card-producto-header .card-header-img {
-    width: 70%;
+    width: 20%;
   }
   .container-productos .container-productos-cards .card-producto .card-producto-body {
     width: 320px;
@@ -439,6 +498,39 @@
   }
   .container-productos .container-productos-cards .card-producto .card-producto-body .card-body-span-precio {
     font-size: 1.4rem;
+  }
+  .main-container-carrito .container-carrito {
+    display: grid;
+    width: 1000px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+  }
+  .main-container-carrito .container-carrito .container-carrito-productos .carrito-contador span {
+    font-size: 1.8rem;
+  }
+  .main-container-carrito .container-carrito .container-carrito-pagar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .main-container-carrito .container-carrito .container-carrito-pagar span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  .main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-total {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-button button {
+    padding: 1rem;
+    width: 100%;
+    border-radius: 50px;
+    background-color: orange;
+    color: white;
+    font-weight: bolder;
   }
 }
 
