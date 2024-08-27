@@ -37,6 +37,11 @@
     }
 
 }
+@mixin dFlexColumnItemsStart{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
 
 @mixin dFlexColumnItemsCenter{
     display: flex;

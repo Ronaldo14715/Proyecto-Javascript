@@ -119,7 +119,7 @@
   padding: 1rem;
 }
 .main-container-carrito .container-carrito {
-  border: 1px solid black;
+  border: 1px solid gray;
 }
 .main-container-carrito .container-carrito .container-carrito-productos .carrito-contador {
   padding: 1rem;
@@ -128,27 +128,43 @@
   font-weight: bold;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-productos {
+  padding: 1rem;
+}
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .carrito-vacio {
+  padding: 1rem;
+}
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .carrito-vacio p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
 .main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto {
   display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid black;
-}
-.main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto .carrito-productos-img img {
-  width: 8rem;
+  align-items: center;
+  padding: 0.5rem;
 }
 .main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto .carrito-productos-descripcion {
   display: flex;
   flex-direction: column;
+  align-items: start;
   justify-content: center;
+  width: 100%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto .carrito-productos-descripcion .carrito-envio {
   color: green;
 }
+.main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto .carrito-productos-img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .main-container-carrito .container-carrito .container-carrito-pagar {
   display: flex;
   flex-direction: column;
+  align-items: start;
+  border: 1px solid gray;
   gap: 1rem;
   padding: 1rem;
 }
@@ -160,14 +176,22 @@
 .main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-total {
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap: 0.5rem;
+  width: 100%;
+}
+.main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-total span {
+  text-align: center;
+}
+.main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-button {
+  width: 100%;
 }
 .main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-button button {
   padding: 1rem;
   width: 100%;
   border-radius: 50px;
-  background-color: orange;
-  color: white;
+  background-color: #3b3636;
+  color: #fff;
   font-weight: bolder;
 }
 
@@ -488,7 +512,7 @@
     padding: 1rem 0 1rem 0;
   }
   .container-productos .container-productos-cards .card-producto .card-producto-header .card-header-img {
-    width: 20%;
+    width: 70%;
   }
   .container-productos .container-productos-cards .card-producto .card-producto-body {
     width: 320px;
@@ -508,9 +532,13 @@
   .main-container-carrito .container-carrito .container-carrito-productos .carrito-contador span {
     font-size: 1.8rem;
   }
+  .main-container-carrito .container-carrito .container-carrito-productos .carrito-productos .producto .carrito-productos-img img {
+    width: 40%;
+  }
   .main-container-carrito .container-carrito .container-carrito-pagar {
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: 1rem;
     padding: 1rem;
   }
@@ -522,14 +550,15 @@
   .main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-total {
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: 0.5rem;
   }
   .main-container-carrito .container-carrito .container-carrito-pagar .carrito-pagar-button button {
     padding: 1rem;
     width: 100%;
-    border-radius: 50px;
-    background-color: orange;
-    color: white;
+    background-color: #3b3636;
+    border: 1px solid black;
+    color: #fff;
     font-weight: bolder;
   }
 }

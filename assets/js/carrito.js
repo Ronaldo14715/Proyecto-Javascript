@@ -1,27 +1,31 @@
-function mostrarCarrito(){
+function mostrarCarrito() {
     const carritoGuardado = localStorage.getItem('carrito');
     const contenedor = document.getElementById('container-carrito');
 
-    if(carritoGuardado){
-        const carrito = JSON.parse(carritoGuardado);
-        const cantidadProductosUnicos = Object.keys(carrito).length;
-        let total = 0;
-        
-        contenedor.innerHTML = '';
+    contenedor.innerHTML = ''; // Limpiar el contenedor antes de agregar contenido
+    const containerCarritoProductos = document.createElement('div');
+    containerCarritoProductos.classList.add('container-carrito-productos');
 
-        const containerCarritoProductos = document.createElement('div'); 
-        containerCarritoProductos.classList.add('container-carrito-productos');
+    let carrito = {};
+    let cantidadProductosUnicos = 0;
+    let total = 0;
 
-        const carritoProductos = document.createElement('div');
-        carritoProductos.classList.add('carrito-productos');
+    if (carritoGuardado) {
+        carrito = JSON.parse(carritoGuardado);
+        cantidadProductosUnicos = Object.keys(carrito).length;
+    }
 
-        const carritoContador = document.createElement('div');
-        carritoContador.classList.add('carrito-contador');
-        const spanCantidadUnico = document.createElement('span');
-        spanCantidadUnico.textContent = `Cesta de compra ${cantidadProductosUnicos}`;
-        carritoContador.appendChild(spanCantidadUnico);
-        containerCarritoProductos.appendChild(carritoContador);
+    const carritoProductos = document.createElement('div');
+    carritoProductos.classList.add('carrito-productos');
 
+    const carritoContador = document.createElement('div');
+    carritoContador.classList.add('carrito-contador');
+    const spanCantidadUnico = document.createElement('span');
+    spanCantidadUnico.textContent = `Cesta de compra (${cantidadProductosUnicos})`;
+    carritoContador.appendChild(spanCantidadUnico);
+    containerCarritoProductos.appendChild(carritoContador);
+
+    if (cantidadProductosUnicos > 0) {
         Object.keys(carrito).forEach(id => {
             const producto = carrito[id];
             const subtotal = producto.precio * producto.cantidad;
@@ -48,50 +52,62 @@ function mostrarCarrito(){
             const spanPrecio = document.createElement('span');
             spanPrecio.textContent = `S/. ${producto.precio.toFixed(2)}`;
 
+            const spanCantidad = document.createElement('span');
+            spanCantidad.textContent = `Cantidad: ${producto.cantidad}`;
+
             const spanEnvio = document.createElement('span');
             spanEnvio.classList.add('carrito-envio');
-            spanEnvio.textContent = "Envio gratis";
+            spanEnvio.textContent = "Envío gratis";
 
             carritoProductoDivDescripcion.appendChild(descripcionP);
             carritoProductoDivDescripcion.appendChild(spanPrecio);
+            carritoProductoDivDescripcion.appendChild(spanCantidad);
             carritoProductoDivDescripcion.appendChild(spanEnvio);
 
             productoDiv.appendChild(carritoProductoDivImg);
             productoDiv.appendChild(carritoProductoDivDescripcion);
 
             carritoProductos.appendChild(productoDiv);
-            containerCarritoProductos.appendChild(carritoProductos);
         });
-
-        const containerCarritoPagar = document.createElement('div');
-        containerCarritoPagar.classList.add('container-carrito-pagar');
-
-        const carritoPagarTotal = document.createElement('div');
-        carritoPagarTotal.classList.add('carrito-pagar-total');
-
-        const spanTextResumen = document.createElement('span');
-        spanTextResumen.textContent = 'Resumen';
-        const spanTotal = document.createElement('span');
-        spanTotal.textContent = `Total: S/.${total.toFixed(2)}`;
-
-        carritoPagarTotal.appendChild(spanTextResumen);
-        carritoPagarTotal.appendChild(spanTotal);
-
-        const carritoPagarDivButton = document.createElement('div');
-        carritoPagarDivButton.classList.add('carrito-pagar-button');
-
-        const pagarButton = document.createElement('button');
-        pagarButton.textContent = "PAGAR";
-        carritoPagarDivButton.appendChild(pagarButton);
-
-        containerCarritoPagar.appendChild(carritoPagarTotal);
-        containerCarritoPagar.appendChild(carritoPagarDivButton);
-
-        contenedor.appendChild(containerCarritoProductos);
-        contenedor.appendChild(containerCarritoPagar);
     } else {
-        console.log("No hay productos en el carrito.");
+        // Cuando no hay productos en el carrito, mostrar un mensaje simple
+        const carritoVacioDiv = document.createElement('div');
+        const carritoVacioP= document.createElement('p');
+        carritoVacioDiv.classList.add('carrito-vacio');
+        carritoVacioP.textContent = 'SIN PRODUCTOS AGREGADOS';
+        carritoVacioDiv.appendChild(carritoVacioP);
+        carritoProductos.appendChild(carritoVacioDiv);
     }
+
+    containerCarritoProductos.appendChild(carritoProductos);
+
+    const containerCarritoPagar = document.createElement('div');
+    containerCarritoPagar.classList.add('container-carrito-pagar');
+
+    const carritoPagarTotal = document.createElement('div');
+    carritoPagarTotal.classList.add('carrito-pagar-total');
+
+    const spanTextResumen = document.createElement('span');
+    spanTextResumen.textContent = 'Resumen';
+    const spanTotal = document.createElement('span');
+    spanTotal.textContent = `Total: S/.${total.toFixed(2)}`;
+
+    carritoPagarTotal.appendChild(spanTextResumen);
+    carritoPagarTotal.appendChild(spanTotal);
+
+    const carritoPagarDivButton = document.createElement('div');
+    carritoPagarDivButton.classList.add('carrito-pagar-button');
+
+    const pagarButton = document.createElement('button');
+    pagarButton.textContent = "PAGAR";
+    pagarButton.disabled = total === 0;
+    carritoPagarDivButton.appendChild(pagarButton);
+
+    containerCarritoPagar.appendChild(carritoPagarTotal);
+    containerCarritoPagar.appendChild(carritoPagarDivButton);
+
+    contenedor.appendChild(containerCarritoProductos);
+    contenedor.appendChild(containerCarritoPagar);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

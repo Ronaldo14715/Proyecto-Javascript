@@ -309,7 +309,7 @@
                 .card-producto-header{
                     padding: 1rem 0 1rem 0;
                     .card-header-img{
-                        width: 20%;
+                        width: 70%;
                     }
                 }
                 .card-producto-body{
@@ -336,10 +336,18 @@
                         font-size: 1.8rem;
                     }
                 }
+                .carrito-productos{
+                    .producto{
+                        .carrito-productos-img{
+                            img{
+                                width: 40%;
+                            }
+                        }
+                    }
+                }
             }
             .container-carrito-pagar{
-                display: flex;
-                flex-direction: column;
+                @include dFlexColumnItemsStart;
                 gap: 1rem;
                 padding: 1rem;
                 span{
@@ -348,17 +356,16 @@
                     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                 }
                 .carrito-pagar-total{
-                    display: flex;
-                    flex-direction: column;
+                    @include dFlexColumnItemsStart;
                     gap: 0.5rem;
                 }
                 .carrito-pagar-button{
                     button{
                         padding: 1rem;
                         width: 100%;
-                        border-radius: 50px;
-                        background-color: orange;
-                        color: white;
+                        background-color: $divButtonColor;
+                        border: 1px solid black;
+                        color: $white;
                         font-weight: bolder;
                     }
                 }
