@@ -1,78 +1,83 @@
 @use '../_utilities/variables.scss' as *;
 @use '../_utilities/mixins.scss' as *;
 
-.main-container-carrito{
-    @include dFlexColumnItemsCenter;
-    padding: 1rem;
-    .container-carrito{
-            border: 1px solid gray;
-        .container-carrito-productos{
-            .carrito-contador{
+.containerMain{
+    background-color: $bodycolorCarrito;
+    
+    .main-container-carrito{
+        @include dFlexColumnItemsCenter;
+        padding: 1rem;
+        .container-carrito{
+            .container-carrito-productos{
+                background-color: $white;
+                .carrito-contador{
+                    padding: 1rem;
+                    span{
+                        font-weight: bold;
+                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    }
+                }
+                .carrito-productos{
+                    padding: 1rem;
+                    .carrito-vacio{
+                        padding: 1rem;
+                        p{
+                            text-align: center;
+                            font-size: 1.5rem;
+                            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                        }
+                    }
+                    .producto{
+                        @include dFlexRowItemsCenter;
+                        padding: 0.5rem;
+                        .carrito-productos-descripcion{
+                            @include dFlexColumnItemsStart;
+                            justify-content: center;
+                            width: 100%;
+                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            .carrito-envio{
+                                color: green;
+                            }
+                        }
+                        .carrito-productos-img{
+                            @include dFlexRowJustifyCenter;
+                            width: 100%;
+                        }
+                    }
+    
+                }
+            }
+            .container-carrito-pagar{
+                background-color: #ffffff;
+                @include dFlexColumnItemsStart;
+                gap: 1rem;
                 padding: 1rem;
                 span{
                     font-weight: bold;
+                    font-size: 1.2rem;
                     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                 }
-            }
-            .carrito-productos{
-                padding: 1rem;
-                .carrito-vacio{
-                    padding: 1rem;
-                    p{
-                        text-align: center;
-                        font-size: 1.5rem;
-                        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                    }
-                }
-                .producto{
-                    @include dFlexRowItemsCenter;
-                    padding: 0.5rem;
-                    .carrito-productos-descripcion{
-                        @include dFlexColumnItemsStart;
-                        justify-content: center;
-                        width: 100%;
-                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                        .carrito-envio{
-                            color: green;
-                        }
-                    }
-                    .carrito-productos-img{
-                        @include dFlexRowJustifyCenter;
-                        width: 100%;
-                    }
-                }
-
-            }
-        }
-        .container-carrito-pagar{
-            @include dFlexColumnItemsStart;
-            border: 1px solid gray;
-            gap: 1rem;
-            padding: 1rem;
-            span{
-                font-weight: bold;
-                font-size: 1.2rem;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            }
-            .carrito-pagar-total{
-                @include dFlexColumnItemsStart;
-                gap: 0.5rem;
-                width: 100%;
-                span{
-                    text-align: center;
-                }
-            }
-            .carrito-pagar-button{
-                width: 100%;
-                button{
-                    padding: 1rem;
+                .carrito-pagar-total{
+                    @include dFlexColumnItemsStart;
+                    gap: 0.5rem;
                     width: 100%;
-                    border-radius: 50px;
-                    background-color: $divButtonColor;
-                    color: $white;
-                    font-weight: bolder;
+                    span{
+                        text-align: center;
+                    }
+                }
+                .carrito-pagar-button{
+                    width: 100%;
+                    button{
+                        padding: 1rem;
+                        width: 100%;
+                        border-radius: 50px;
+                        background-color: $divButtonColor;
+                        color: $white;
+                        font-weight: bolder;
+                    }
                 }
             }
         }
     }
+
 }

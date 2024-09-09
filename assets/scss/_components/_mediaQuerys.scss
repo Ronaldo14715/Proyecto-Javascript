@@ -60,7 +60,7 @@
     .container-productos{
         .container-productos-cards{
             display: grid;
-            grid-template-columns: repeat(  1fr);
+            grid-template-columns: repeat(1fr);
             grid-template-rows: auto;
             gap: 2rem;
             place-items: center center;
@@ -83,6 +83,64 @@
             }
         }
     }
+
+    .main-container-carrito{
+        
+        .container-carrito{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 1rem;
+                
+            .container-carrito-productos{
+                
+                .carrito-contador{
+                    span{
+                        font-size: 1.8rem;
+                    }
+                }
+                .carrito-productos{
+                    .producto{
+                        .carrito-productos-descripcion{
+                            @include dFlexColumnItemsCenter;
+                        }
+                        .carrito-productos-img{
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            .container-carrito-pagar{
+                @include dFlexRowJustifyCenter;
+                gap: 1rem;
+                padding: 1rem;
+                span{
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                }
+                .carrito-pagar-total{
+                    @include dFlexColumnItemsCenter;
+                    gap: 0.5rem;
+                }
+                .carrito-pagar-button{
+                    button{
+                        padding: 1rem;
+                        width: 100%;
+                        background-color: $divButtonColor;
+                        border: 1px solid black;
+                        color: $white;
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+    }
+
+    
 
     .containerFooter{
         display: grid;
@@ -330,6 +388,7 @@
                 width: 1000px;
                 grid-template-columns: 2fr 1fr;
                 grid-template-rows: auto;
+                gap: 1rem;
             .container-carrito-productos{
                 .carrito-contador{
                     span{

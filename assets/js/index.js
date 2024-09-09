@@ -106,10 +106,24 @@ function agregarProductoAlCarrito(idProducto){
         }
         total += producto.precio;
 
-        let mensajeCarrito = `Productos agregado al carrito:\n${producto.descripcion}`;
+        let mensajeCarrito = `Producto agregado al carrito:\n${producto.descripcion}`;
 
         
-        alert(mensajeCarrito);
+        Toastify({
+            text: mensajeCarrito,
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to left, #fff, #808080 )", color: "#171717",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+
         guardarCarrito();
     }else{
         console.log("error, producto no encontrado.");
