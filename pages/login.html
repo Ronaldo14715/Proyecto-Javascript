@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geek Store - Login</title>
+    <!-- SEO -->
+    <meta name="description" content="Accede a tu cuenta para disfrutar de todos los servicios personalizados. Inicia sesión con tu usuario y contraseña de manera segura y rápida. ¡Bienvenido de nuevo!">
+    <meta name="keywords" content="iniciar sesión, login, acceso, cuenta, usuario, contraseña, seguridad, autentificación, portal, login seguro">
+    <meta name="author" content="Ronaldo Farfan Ayma">
+    <!-- FIN SEO -->
+    <!-- BOOTSTRAP ICON -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- FIN BOOTSTRAP ICON -->
+    <!-- ICON -->
+    <link rel="icon" href="../assets/img/icon.png">
+    <!-- FIN ICON -->
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- FIN TOASTIFY -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- FIN CSS -->
+</head>
+<body>
+    <div class="containerMain">
+        
+        <header class="containerHeader">
+            <a href="./../index.html"><img class="img-icon" src="../assets/img/icon2.png" alt="icono"></a>
+            <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+            <nav id="containerNav" class="containerNav">
+                <button id="cerrar" class="cerrar-menu" ><i class="bi bi-x"></i></button>
+                <ul class="nav-list">
+                    <li><a href="./../index.html">INICIO</a></li>
+                    <li><a href="carrito.html">CARRITO</a></li>
+                    <li><a class="nav-active" href="login.html">LOGIN</a></li>
+                </ul>
+            </nav>
+        
+        </header>
+
+        <div class="container-fluid d-flex align-items-center justify-content-around">
+            <div class="row d-flex justify-content-around align-items-center">
+                <!-- FORMULARIO SIGNIN-->
+                <div class="col-lg-6 col-md-8 col-sm-12 ">
+                    <form class="formulario-signIn col-12" action="#">
+                        <div class="row mb-5 d-flex justify-content-center">
+                            <div class="col-sm-12">
+                                <h2 class="title-signIn text-center">CREAR CUENTA</h2>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center mb-3">
+                            <div class="col-sm-8 col-md-6 col-lg-4 mb-3">
+                                <label class="form-label" for="txtUsuario">Usuario</label>
+                                <input type="text" class="form-control" id="txtUsuario" name="txtUsuario">
+                            </div>
+                            <div class="col-sm-8 col-md-6 col-lg-4 mb-3">           
+                                <label class="form-label" for="txtPassword">Contraseña</label>                 
+                                <input type="password" class="form-control" id="txtPassword" name="txtPassword">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center mb-3">
+                            <div class="col-sm-8 col-md-6 col-lg-4">
+                                <label class="form-label" for="txtNombre">Nombre</label>
+                                <input type="text" class="form-control" id="txtNombre" name="txtNombre">
+                            </div>
+                            <div class="col-sm-8 col-md-6 col-lg-4">
+                                <label class="form-label" for="txtApellido">Apellido</label>
+                                <input type="text" class="form-control" id="txtApellido" name="txtApellido">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center g-4 mb-3">
+                            <div class="col-sm-8 col-md-6 col-lg-4"> 
+                                <label class="form-label" for="selectGenero">Genero</label>
+                                <select class="form-select" id="selectGenero" name="selectGenero">
+                                    <option value="0">Hombre</option>
+                                    <option value="1">Mujer</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-8 col-md-6 col-lg-4">
+                                <label class="form-label" for="txtDni">Dni</label>
+                                <input type="text" class="form-control" id="txtDni" name="txtDni">
+                            </div>
+                        </div>
+                        <div class="row my-5">
+                            <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                                <button id="btn-signIn" type="button" class="btn btn-signIn btn-dark">Crear Cuenta</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- FIN FORMULARIO SIGNIN-->
+                <div class=" col-lg-4 col-md-6 col-sm-12">
+                    <form class="formulario-logIn col-12" action="#">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-12">
+                                <h2 class="title-signIn text-center">ACCEDER</h2>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <img class="w-25 rounded-circle" src="./../assets/img/user.jpg" alt="user">
+                        </div>
+                        <div class="row d-flex justify-content-center mb-3">
+                            <div class="col-sm-10 col-md-8 col-lg-8 mb-3">
+                                <label class="form-label" for="txtEmailLogin">Usuario:</label>
+                                <input type="email" class="form-control" id="txtEmailLogin" name="txtEmailLogin">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center mb-3">
+                            <div class="col-sm-10 col-md-8 col-lg-8 mb-3">
+                                <label class="form-label" for="txtcontraseñaLogin">Contraseña:</label>
+                                <input type="password" class="form-control" id="txtcontraseñaLogin" name="txtcontraseñaLogin">
+                            </div>
+                        </div>
+                        <div class="row my-5">
+                            <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                                <button id="btn-ingresar" type="button" class="btn btn-logIn btn-dark">Ingresar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class="containerFooter">
+            <div class="footerIcons">
+                <a class="icon" target="_blank" href="https://www.facebook.com/RonaldoFarfanA/">
+                    <i class="link1 bi bi-facebook"></i>
+                </a>
+                <a class="icon" target="_blank" href="https://www.linkedin.com/in/ronaldo-farfan-ayma-968000150/">
+                    <i class="link1 bi bi-linkedin"></i>
+                </a>
+                <a class="icon" target="_blank" href="https://www.instagram.com/ronaldofarfan/">
+                    <i class="link1 bi bi-instagram"></i>
+                </a>
+                <a class="icon" target="_blank" href="https://github.com/Ronaldo14715">
+                    <i class="link1 bi bi-github"></i>
+                </a>
+            </div>
+            <div class="footerName">
+                <p class="info">RONALDO F.</p>
+                <p class="info">JAVASCRIPT</p>
+                <p class="info">LIMA, PERÚ - 936364880</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+<script src="../assets/js/interfasUsuario.js"></script>
+<script src="../assets/js/index.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<!-- JS BOOTSTRAP -->  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- FIN JS BOOTSTRAP -->
+</html>

@@ -16,6 +16,7 @@ class Tienda{
     }
 }
 
+
 const geekStore = new Tienda();
 const producto1 = new Producto(1,"../assets/img/figuraNarutoShippudenSasuke.webp","Funko Pop - Sasuke", 150);
 const producto2 = new Producto(2,"../assets/img/figuraOnePieceGoldRoger.jpg","Funko Pop - Gol D Roger", 150);
@@ -131,7 +132,6 @@ function agregarProductoAlCarrito(idProducto){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    
     mostrarProductos(geekStore.productos);
     cargarCarrito();
 });
