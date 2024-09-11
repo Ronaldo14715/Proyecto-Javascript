@@ -1,9 +1,10 @@
 class Producto {
-    constructor(id, imagen, descripcion, precio) {
+    constructor(id, imagen, descripcion, precio, cantidad = 1) {
         this.id = id;
         this.imagen = imagen;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.cantidad = cantidad;
     }
 }
 
@@ -17,7 +18,6 @@ class Tienda {
 }
 
 function mostrarProductos() {
-
     const contenedor = document.getElementById('container-productos-cards');
     contenedor.innerHTML = '';
 
@@ -67,7 +67,7 @@ function mostrarProductos() {
                 buttonFooter.id = `btn-id-${producto.id}`;
                 buttonFooter.innerHTML = `<i class="bi bi-cart-fill"></i> COMPRAR AHORA`;
 
-                buttonFooter.addEventListener('click', () => agregarProductoAlCarrito(producto.id));
+                buttonFooter.addEventListener('click', () => agregarProductoAlCarrito(producto));
 
                 footerDiv.appendChild(buttonFooter);
 
@@ -81,8 +81,52 @@ function mostrarProductos() {
         .catch(error => console.error('Error al cargar los productos:', error));
 }
 
+function agregarProductoAlCarrito(producto) {
+    const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
 
+    if (!usuarioActual) {
+        Toastify({
+            text: "Debes iniciar sesión para agregar productos al carrito",
+            duration: 3000,
+            gravity: "top",
+            position: "center",
+            style: {
+                background: "red",
+            }
+        }).showToast();
+        return;
+    }
 
+    const carritoKey = `carrito_${usuarioActual.usuario}`;
+    let carrito = JSON.parse(localStorage.getItem(carritoKey)) || [];
+
+    // Buscar si el producto ya está en el carrito
+    let productoExistente = carrito.find(p => p.id === producto.id);
+
+    if (productoExistente) {
+        // Si el producto ya existe en el carrito, incrementar la cantidad
+        productoExistente.cantidad += 1;
+    } else {
+        // Si el producto no existe en el carrito, agregarlo con cantidad 1
+        producto.cantidad = 1;
+        carrito.push(producto);
+    }
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem(carritoKey, JSON.stringify(carrito));
+
+    Toastify({
+        text: "Producto agregado exitosamente",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        style: {
+            background: "green",
+        }
+    }).showToast();
+}
+
+// Mostrar los productos al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     mostrarProductos();
 });

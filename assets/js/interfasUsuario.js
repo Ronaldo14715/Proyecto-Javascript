@@ -15,5 +15,30 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('Error');
     }
-    //NAV
+
+    //LOGIN - LOGOUT
+
+    const loginLink = document.getElementById('login-link');
+    const logoutLink = document.getElementById('logout-link');
+
+    const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+
+    if (usuarioActual) {
+
+        loginLink.style.display = 'none';
+        logoutLink.style.display = 'inline';
+        logoutLink.textContent = `CERRAR SESIÓN (${usuarioActual.usuario})`;
+    } else {
+
+        loginLink.style.display = 'inline';
+        logoutLink.style.display = 'none';
+    }
+
+    logoutLink.addEventListener('click', function (event) {
+        
+        event.preventDefault(); 
+        localStorage.removeItem('usuarioActual');
+        window.location.href = "../pages/login.html";
+    });
+
 });
