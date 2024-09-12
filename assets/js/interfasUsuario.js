@@ -37,8 +37,39 @@ document.addEventListener('DOMContentLoaded', () => {
     logoutLink.addEventListener('click', function (event) {
         
         event.preventDefault(); 
-        localStorage.removeItem('usuarioActual');
-        window.location.href = "../pages/login.html";
+        
+        Swal.fire({
+            title: '¿Estas seguro?',
+            text: '¿Quieres cerrar sesion?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, cerrar sesión',
+            cancelButtonText: 'No, permanecer'
+        }).then((result) => {
+            if(result.isConfirmed){
+
+                localStorage.removeItem('usuarioActual');
+                Swal.fire(
+                    '¡Sesión cerrada!',
+                    'Has cerrado sesión correctamente.',
+                    'success'
+                ).then(() => {
+                    window.location.href = "../pages/login.html";
+                });
+
+            }else{
+
+                Swal.fire(
+                    '¡Cancelado!',
+                    'Tu sesión sigue activa.',
+                    'info'
+                );
+            }
+
+        });
+
     });
 
 });

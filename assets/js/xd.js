@@ -100,19 +100,18 @@ function agregarProductoAlCarrito(producto) {
     const carritoKey = `carrito_${usuarioActual.usuario}`;
     let carrito = JSON.parse(localStorage.getItem(carritoKey)) || [];
 
-    // Buscar si el producto ya está en el carrito
     let productoExistente = carrito.find(p => p.id === producto.id);
 
     if (productoExistente) {
-        // Si el producto ya existe en el carrito, incrementar la cantidad
+
         productoExistente.cantidad += 1;
+
     } else {
-        // Si el producto no existe en el carrito, agregarlo con cantidad 1
+
         producto.cantidad = 1;
         carrito.push(producto);
     }
 
-    // Guardar el carrito actualizado en localStorage
     localStorage.setItem(carritoKey, JSON.stringify(carrito));
 
     Toastify({
