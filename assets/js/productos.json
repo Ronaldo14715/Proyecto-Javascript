@@ -1,19 +1,19 @@
 [
     {
       "id": 1,
-      "imagen": "../assets/img/figuraNarutoShippudenSasuke.webp",
+      "imagen": "./assets/img/figuraNarutoShippudenSasuke.webp",
       "descripcion": "Funko Pop - Sasuke",
       "precio": 150
     },
     {
       "id": 2,
-      "imagen": "../assets/img/figuraOnePieceGoldRoger.jpg",
+      "imagen": "./assets/img/figuraOnePieceGoldRoger.jpg",
       "descripcion": "Funko Pop - Gol D Roger",
       "precio": 150
     },
     {
       "id": 3,
-      "imagen": "../assets/img/figuraOnePieceLuffy.jpg",
+      "imagen": "./assets/img/figuraOnePieceLuffy.jpg",
       "descripcion": "Funko Pop - Luffy",
       "precio": 170
     }
