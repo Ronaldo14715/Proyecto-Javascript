@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Has cerrado sesión correctamente.',
                     'success'
                 ).then(() => {
-                    window.location.href = "/pages/login.html";
+                    window.location.href = "/Proyecto-Javascript/pages/login.html";
                 });
             }else{
 
