@@ -21,7 +21,7 @@ function mostrarProductos() {
     const contenedor = document.getElementById('container-productos-cards');
     contenedor.innerHTML = '';
 
-    fetch('./assets/js/productos.json')
+    fetch('./assets/js/productos.json?v=1.2')
         .then(res => res.json())
         .then(data => {
             data.forEach(productoData => {
